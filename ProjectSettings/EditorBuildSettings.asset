@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: e2182f7be5dffd54294654fe1d2a4264
   - enabled: 1
+    path: Assets/Scenes/Speech.unity
+    guid: 1785a8f4092e77a4f9478916f7d5e4a4
+  - enabled: 1
     path: Assets/Scenes/Apartment.unity
     guid: 0151442a78fc2fe4eaa863795f2537d4
