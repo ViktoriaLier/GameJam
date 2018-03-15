@@ -12,7 +12,7 @@ public class CameraMovement : MonoBehaviour {
     public float minDistance = 0.6f;
     public float xSpeed = 200.0f;
     public float ySpeed = 200.0f;
-    public float yMinLimit = -80f;
+    public float yMinLimit = -60f;
     public float yMaxLimit = 80f;
     public float zoomRate = 40;
     public float rotationDamping = 3.0f;
@@ -46,6 +46,7 @@ public class CameraMovement : MonoBehaviour {
         if (rb) rb.freezeRotation = true;
 
         if (lockToRearOfTarget) rotateBehind = true;
+
 
     }
 	
