@@ -1,21 +1,21 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class InteractionCondition : MonoBehaviour
-{
-    
-    public void OnTriggerEnter()
-    {
-        Talk();
-    }
+public class Interaction : MonoBehaviour {
 
-    public void OnTriggerEnter(Collider other)
+    public bool talk;
+    public bool convinced = false;
+
+    private void OnTriggerEnter()
     {
-        if (other.gameObject.GetComponent<DialogTest>() != null)
+        if ( convinced == false)
         {
-            Talk();
-        }
-    }
+            talk = true;
 
+        }
+
+    }
 
 
 }
