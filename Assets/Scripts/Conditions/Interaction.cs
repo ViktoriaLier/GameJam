@@ -7,14 +7,22 @@ public class Interaction : MonoBehaviour {
     public bool talk;
     public bool convinced = false;
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        if ( convinced == false)
+        if (other.gameObject.tag == "Player")
         {
-            talk = true;
+            if (convinced == false)
+            {
+                talk = true;
+
+            }
+            else
+            {
+                talk = false;
+            }
+            
 
         }
-
     }
 
 
