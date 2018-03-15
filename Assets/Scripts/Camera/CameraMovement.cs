@@ -47,6 +47,7 @@ public class CameraMovement : MonoBehaviour {
 
         if (lockToRearOfTarget) rotateBehind = true;
 
+
     }
 	
 	// Only move camera after everything else has been upated
