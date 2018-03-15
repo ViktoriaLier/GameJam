@@ -8,25 +8,33 @@ public class DialogTest : MonoBehaviour {
     public Text text;
     public Text optionA;
     public Text optionB;
-    public GameObject dialogBox;
+    public Canvas canvas;
 
-    private bool optionA1;
-    private bool optionA2;
-    private bool optionB1;
-    private bool optionB2;
+    private bool optionA1 = false;
+    private bool optionA2 = false;
+    private bool optionB1 = false;
+    private bool optionB2 = false;
     private int dialogProgress;
 
     // Use this for initialization
     void Start () {
         dialogProgress = 0;
+        canvas.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            dialogBox.SetActive(true);
+            canvas.enabled = true;
+            optionA1 = false;
+            optionA2 = false;
+            optionB1 = false;
+            optionB2 = false;
+            dialogProgress = 0;
         }
+
+        DialogProgression();
 	}
 
 
@@ -53,13 +61,24 @@ public class DialogTest : MonoBehaviour {
             optionB.text = "OptionB2";
         }
 
-
+        if (CorrectOrder() && dialogProgress == 2)
+        {
+            text.text = "You convinced me!";
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                CloseDialog();
+            }
+        }
+        else if(!CorrectOrder() && dialogProgress == 2)
+        {
+            text.text = "You chose OptionA again! I dont think i can trust you.";
+           
+        }
     }
-
 
     public void CloseDialog()
     {
-        dialogBox.SetActive(false);
+        canvas.enabled = false;
     }
 
     public void ChoseOptionA()
