@@ -19,10 +19,10 @@ public class DialogTest : MonoBehaviour {
     private bool optionB1 = false;
     private bool optionB2 = false;
     private int dialogProgress;
-    private bool objectInteraction = false;
 
     //TextBox Texts
-    private string textInitiate; //Also used for normal interaction!
+    private string textInitiate;
+    private string textObject;
     private string textChoseA;
     private string textChoseB;
     private string textConvinced;
@@ -67,16 +67,15 @@ public class DialogTest : MonoBehaviour {
         textB = "OptionB";
         textBB = "OptionBB";
         textBA = "OptionBA";
+
+        //TextBox for interactive Objects
+        textObject = "That's an Object!";
+
     }
 	
     private void OnTriggerEnter(Collider other)
     {
         interaction = other.GetComponent<Interaction>();
-
-        if(other.gameObject.tag == "Object")
-        {
-            objectInteraction = true;
-        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -97,12 +96,8 @@ public class DialogTest : MonoBehaviour {
 
             DialogProgression();
         }
-        else if (interaction == null)
-        {
-            return;
-        }
 
-        if (objectInteraction)
+        if (interaction.interactiveObject)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -110,8 +105,7 @@ public class DialogTest : MonoBehaviour {
                 A.SetActive(false);
                 B.SetActive(false);
             }
-
-
+            ObjectProgression();
         }
     }
 
@@ -176,7 +170,7 @@ public class DialogTest : MonoBehaviour {
 
     void ObjectProgression()
     {
-        text.text = "";
+        text.text = textObject;
     }
 
     void FinishDialog()

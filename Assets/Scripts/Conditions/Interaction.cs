@@ -6,19 +6,29 @@ public class Interaction : MonoBehaviour {
 
     public bool talk;
     public bool convinced = false;
+    public bool interactiveObject;
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if(gameObject.tag == "NPC")
         {
-            if (convinced == false)
+            interactiveObject = false;
+            if (other.gameObject.tag == "Player")
             {
-                talk = true;
+                if (convinced == false)
+                {
+                    talk = true;
+                }
+                else
+                {
+                    talk = false;
+                }
             }
-            else
-            {
-                talk = false;
-            }
+        }
+       
+        if(gameObject.tag == "Object")
+        {
+            interactiveObject = true;
         }
     }
 
