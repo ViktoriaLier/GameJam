@@ -19,10 +19,64 @@ public class DialogTest : MonoBehaviour {
     private bool optionB1 = false;
     private bool optionB2 = false;
     private int dialogProgress;
+    private bool objectInteraction = false;
 
+    //TextBox Texts
+    private string textInitiate; //Also used for normal interaction!
+    private string textChoseA;
+    private string textChoseB;
+    private string textConvinced;
+    private string textChoseA2;
+    private string textChoseB2;
+    //Wrong Answers
+    private string textA3;
+    private string textB3;
+
+    // A/B Answers
+    private string textA;
+    private string textB;
+    //Route A
+    private string textAA;
+    private string textAB;
+    //Route B
+    private string textBA;
+    private string textBB;
+
+
+
+
+    // Use this for initialization
+    void Start () {
+        dialogProgress = 0;
+        canvas.enabled = false;
+
+        //TextBox Texts for Dialog
+        textInitiate = "That's an example text!";
+        textChoseA = "You chose OptionA! I am still not convinced yet.";
+        textChoseB = "You chose OptionB! I am still not convinced yet.";
+        textChoseA2 = "You chose OptionA2! I dont think i can trust you.";
+        textChoseB2 = "You chose OptionB again! I dont think i can trust you.";
+        textConvinced = "You convinced me!";
+        textA3 = "You chose OptionA2! I dont think i can trust you.";
+        textB3 = "You chose OptionB again! I dont think i can trust you.";
+
+        //Possible Answers
+        textA = "OptionA";
+        textAA = "OptionAA";
+        textAB = "OptionAB";
+        textB = "OptionB";
+        textBB = "OptionBB";
+        textBA = "OptionBA";
+    }
+	
     private void OnTriggerEnter(Collider other)
     {
         interaction = other.GetComponent<Interaction>();
+
+        if(other.gameObject.tag == "Object")
+        {
+            objectInteraction = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -47,6 +101,18 @@ public class DialogTest : MonoBehaviour {
         {
             return;
         }
+
+        if (objectInteraction)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                canvas.enabled = true;
+                A.SetActive(false);
+                B.SetActive(false);
+            }
+
+
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -54,12 +120,6 @@ public class DialogTest : MonoBehaviour {
         CloseDialog();
     }
 
-    // Use this for initialization
-    void Start () {
-        dialogProgress = 0;
-        canvas.enabled = false;
-	}
-	
 	// Update is called once per frame
 	void Update () {
      
@@ -70,28 +130,28 @@ public class DialogTest : MonoBehaviour {
     {
         if(dialogProgress == 0)
         {
-            text.text = "That's an example text!";
-            optionA.text = "OptionA";
-            optionB.text = "OptionB";
+            text.text = textInitiate;
+            optionA.text = textA;
+            optionB.text = textB;
         }
 
         if(dialogProgress == 1 && optionA1)
         {
-            text.text = "You chose OptionA! I am still not convinced yet.";
-            optionA.text = "OptionA2";
-            optionB.text = "OptionB2";
+            text.text = textChoseA;
+            optionA.text = textAA;
+            optionB.text = textBA;
         }
 
         if (dialogProgress == 1 && optionB1)
         {
-            text.text = "You chose OptionB! I am still not convinced yet.";
-            optionA.text = "OptionA2";
-            optionB.text = "OptionB2";
+            text.text = textChoseB;
+            optionA.text = textBA;
+            optionB.text = textBB;
         }
 
         if (CorrectOrder() && dialogProgress == 2)
         {
-            text.text = "You convinced me!";
+            text.text = textConvinced;
             interaction.convinced = true;
             FinishDialog();
             if (Input.GetKeyDown(KeyCode.Space))
@@ -101,19 +161,23 @@ public class DialogTest : MonoBehaviour {
         }
         else if(!CorrectOrder() && dialogProgress == 2 && optionA2)
         {
-            text.text = "You chose OptionA2! I dont think i can trust you.";
+            text.text = textA3;
             FinishDialog();
 
 
         }
         else if (!CorrectOrder() && dialogProgress == 2 && optionB2)
         {
-            text.text = "You chose OptionB again! I dont think i can trust you.";
+            text.text = textB3;
             FinishDialog();
 
         }
     }
 
+    void ObjectProgression()
+    {
+        text.text = "";
+    }
 
     void FinishDialog()
     {

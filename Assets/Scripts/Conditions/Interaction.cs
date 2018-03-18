@@ -14,14 +14,11 @@ public class Interaction : MonoBehaviour {
             if (convinced == false)
             {
                 talk = true;
-
             }
             else
             {
                 talk = false;
             }
-            
-
         }
     }
 
