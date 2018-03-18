@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 17085072}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talk: 0
   convinced: 0
+  interactiveObject: 0
 --- !u!23 &17085073
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talk: 0
   convinced: 0
+  interactiveObject: 0
 --- !u!1 &712931876
 GameObject:
   m_ObjectHideFlags: 0
