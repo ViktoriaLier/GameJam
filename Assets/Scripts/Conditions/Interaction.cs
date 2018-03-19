@@ -9,14 +9,19 @@ public class Interaction : MonoBehaviour {
     public bool interactiveObject;
     public bool correctOrder;
 
+    //Name of the NPC
+    public string npcName;
+
     //TextBox Texts
     public string textInitiate;
     public string textObject;
-    public string textChoseA;
+    public string textChoseA; 
     public string textChoseB;
     public string textConvinced;
-    public string textChoseA2;
-    public string textChoseB2;
+    public string textChoseAA;
+    public string textChoseBB;
+    public string textChoseBA;
+    public string textChoseAB;
 
     // A/B Answers
     public string textA;
@@ -27,6 +32,20 @@ public class Interaction : MonoBehaviour {
     //Route B
     public string textBA;
     public string textBB;
+
+    //Button Texts
+    public string textButtonA;
+    public string textButtonB;
+    public string textButtonAA;
+    public string textButtonBB;
+    public string textButtonAB;
+    public string textButtonBA;
+
+    //Correct Orders
+    public bool correctAA;
+    public bool correctAB;
+    public bool correctBA;
+    public bool correctBB;
 
     private void OnTriggerStay(Collider other)
     {

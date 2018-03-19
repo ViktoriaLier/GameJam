@@ -8,16 +8,21 @@ public class DialogTest : MonoBehaviour {
     public Text text;
     public Text optionA;
     public Text optionB;
+    public Text nameWindow;
     public GameObject A;
     public GameObject B;
     public Canvas canvas;
 
     Interaction interaction;
 
-    private bool optionA1 = false;
-    private bool optionA2 = false;
     private bool optionB1 = false;
-    private bool optionB2 = false;
+    private bool optionA1 = false;
+    private bool optionAA = false;
+    private bool optionAB = false;
+    private bool optionBA = false;
+    private bool optionBB = false;
+    private bool playerTalking = false;
+    private bool currentlyTalking = false;
     private int dialogProgress;
 
     // Use this for initialization
@@ -45,16 +50,19 @@ public class DialogTest : MonoBehaviour {
 
         if (interaction.talk)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && currentlyTalking == false)
             {
                 canvas.enabled = true;
                 optionA1 = false;
-                optionA2 = false;
                 optionB1 = false;
-                optionB2 = false;
+                optionAA = false;
+                optionAB = false;
+                optionBA = false;
+                optionBB = false;
                 A.SetActive(true);
                 B.SetActive(true);
                 dialogProgress = 0;
+                currentlyTalking = true;
             }
 
             DialogProgression();
@@ -87,47 +95,187 @@ public class DialogTest : MonoBehaviour {
     {
         if(dialogProgress == 0)
         {
+            nameWindow.text = interaction.npcName;
             text.text = interaction.textInitiate;
-            optionA.text = interaction.textA;
-            optionB.text = interaction.textB;
+            optionA.text = interaction.textButtonA;
+            optionB.text = interaction.textButtonB;
         }
 
-        if(dialogProgress == 1 && optionA1)
+        if(dialogProgress == 1)
         {
-            text.text = interaction.textChoseA;
-            optionA.text = interaction.textAA;
-            optionB.text = interaction.textBA;
-        }
-
-        if (dialogProgress == 1 && optionB1)
-        {
-            text.text = interaction.textChoseB;
-            optionA.text = interaction.textBA;
-            optionB.text = interaction.textBB;
-        }
-
-        if (interaction.correctOrder && dialogProgress == 2)
-        {
-            text.text = interaction.textConvinced;
-            interaction.convinced = true;
-            FinishDialog();
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (optionA1)
             {
-                CloseDialog();
+                if (playerTalking)
+                {
+                    nameWindow.text = "You: ";
+                    text.text = interaction.textA;
+                    A.SetActive(false);
+                    B.SetActive(false);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        playerTalking = false;
+                    }
+                }
+                else
+                {
+                    nameWindow.text = interaction.npcName;
+                    text.text = interaction.textChoseA;
+                    optionA.text = interaction.textButtonAA;
+                    optionB.text = interaction.textButtonAB;
+                    A.SetActive(true);
+                    B.SetActive(true);
+                }
+            }
+
+            if (optionB1)
+            {
+                if (playerTalking)
+                {
+                    nameWindow.text = "You: ";
+                    text.text = interaction.textB;
+                    A.SetActive(false);
+                    B.SetActive(false);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        playerTalking = false;
+                    }
+                }
+                else
+                {
+                    nameWindow.text = interaction.npcName;
+                    text.text = interaction.textChoseB;
+                    optionA.text = interaction.textButtonBA;
+                    optionB.text = interaction.textButtonBB;
+                    A.SetActive(true);
+                    B.SetActive(true);
+                }
             }
         }
-        else if(!interaction.correctOrder && dialogProgress == 2 && optionA2)
+
+        if(dialogProgress == 2)
         {
-            text.text = interaction.textChoseA2;
-            FinishDialog();
+            if (optionAA)
+            {
+                if (playerTalking)
+                {
+                    nameWindow.text = "You: ";
+                    text.text = interaction.textAA;
+                    A.SetActive(false);
+                    B.SetActive(false);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        playerTalking = false;
+                    }
+                }
+                else
+                {
+                    nameWindow.text = interaction.npcName;
+                    A.SetActive(true);
+                    B.SetActive(true);
+                    if (interaction.correctOrder)
+                    {
+                        Convinced();
+                    }
+                    else
+                    {
+                        text.text = interaction.textChoseAA;
+                        FinishDialog();
+                    }
+                }
+ 
+            }
 
+            if (optionAB)
+            {
+                if (playerTalking)
+                {
+                    nameWindow.text = "You: ";
+                    text.text = interaction.textAB;
+                    A.SetActive(false);
+                    B.SetActive(false);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        playerTalking = false;
+                    }
+                }
+                else
+                {
+                    nameWindow.text = interaction.npcName;
+                    A.SetActive(true);
+                    B.SetActive(true);
+                    if (interaction.correctOrder)
+                    {
+                        Convinced();
+                    }
+                    else
+                    {
+                        text.text = interaction.textChoseAB;
+                        FinishDialog();
+                    }
+                }
 
-        }
-        else if (!interaction.correctOrder && dialogProgress == 2 && optionB2)
-        {
-            text.text = interaction.textChoseB2;
-            FinishDialog();
+            }
 
+            if (optionBA)
+            {
+                if (playerTalking)
+                {
+                    nameWindow.text = "You: ";
+                    text.text = interaction.textBA;
+                    A.SetActive(false);
+                    B.SetActive(false);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        playerTalking = false;
+                    }
+                }
+                else
+                {
+                    nameWindow.text = interaction.npcName;
+                    A.SetActive(true);
+                    B.SetActive(true);
+                    if (interaction.correctOrder)
+                    {
+                        Convinced();
+                    }
+                    else
+                    {
+                        text.text = interaction.textChoseBA;
+                        FinishDialog();
+                    }
+                }
+
+            }
+
+            if (optionBB)
+            {
+                if (playerTalking)
+                {
+                    nameWindow.text = "You: ";
+                    text.text = interaction.textBB;
+                    A.SetActive(false);
+                    B.SetActive(false);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        playerTalking = false;
+                    }
+                }
+                else
+                {
+                    nameWindow.text = interaction.npcName;
+                    A.SetActive(true);
+                    B.SetActive(true);
+                    if (interaction.correctOrder)
+                    {
+                        Convinced();
+                    }
+                    else
+                    {
+                        text.text = interaction.textChoseBB;
+                        FinishDialog();
+                    }
+                }
+            }
         }
     }
 
@@ -142,15 +290,20 @@ public class DialogTest : MonoBehaviour {
         B.SetActive(false);
     }
 
-#region ButtonScripts
+    #region ButtonBehaviour
     public void CloseDialog()
     {
         canvas.enabled = false;
         optionA1 = false;
-        optionA2 = false;
         optionB1 = false;
-        optionB2 = false;
+        optionAA = false;
+        optionAB = false;
+        optionBA = false;
+        optionBB = false;
         interaction.correctOrder = false;
+        playerTalking = false;
+        dialogProgress = 0;
+        currentlyTalking = false;
     }
 
     public void ChoseOptionA()
@@ -158,15 +311,24 @@ public class DialogTest : MonoBehaviour {
         if (dialogProgress == 0)
         {
             optionA1 = true;
+            playerTalking = true;
             dialogProgress = 1;
             return;
         }
 
-        if (dialogProgress == 1)
+        if (dialogProgress == 1 && optionA1)
         {
-            optionA2 = true;
+            optionAA = true;
+            playerTalking = true;
             dialogProgress = 2;
         }
+        else if (dialogProgress == 1 && optionB1)
+        {
+            optionBA = true;
+            playerTalking = true;
+            dialogProgress = 2;
+        }
+
     }
 
     public void ChoseOptionB()
@@ -174,13 +336,21 @@ public class DialogTest : MonoBehaviour {
         if (dialogProgress == 0)
         {
             optionB1 = true;
+            playerTalking = true;
             dialogProgress = 1;
             return;
         }
 
-        if (dialogProgress == 1)
+        if (dialogProgress == 1 && optionB1)
         {
-            optionB2 = true;
+            optionBB = true;
+            playerTalking = true;
+            dialogProgress = 2;
+        }
+        else if(dialogProgress == 1 && optionA1)
+        {
+            optionAB = true;
+            playerTalking = true;
             dialogProgress = 2;
         }
     }
@@ -188,13 +358,65 @@ public class DialogTest : MonoBehaviour {
 
     bool CorrectOrder()
     {
-        if(optionA1 && optionB2)
+        if(interaction.correctAA)
         {
-            return true;
+            if (optionAA)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        if (interaction.correctAB)
+        {
+            if (optionAB)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        if (interaction.correctBA)
+        {
+            if (optionBA)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        if (interaction.correctBB)
+        {
+            if (optionBB)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
             return false;
+        }
+
+    }
+
+    void Convinced()
+    {
+        text.text = interaction.textConvinced;
+        interaction.convinced = true;
+        FinishDialog();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CloseDialog();
         }
     }
 }
