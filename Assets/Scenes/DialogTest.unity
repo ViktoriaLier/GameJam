@@ -204,6 +204,132 @@ GameObject:
   m_PrefabParentObject: {fileID: 1565604759680928, guid: 0d32ae0d85c42b141a04ec7e82cffecc,
     type: 2}
   m_PrefabInternal: {fileID: 1485688632}
+--- !u!1 &472872195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 472872200}
+  - component: {fileID: 472872199}
+  - component: {fileID: 472872198}
+  - component: {fileID: 472872197}
+  - component: {fileID: 472872196}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &472872196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472872195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989263e60d17c5948afabddd93e32c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talk: 0
+  convinced: 0
+  interactiveObject: 0
+  correctOrder: 0
+  npcName: Hans
+  textInitiate: What do you want?
+  textObject: 
+  textChoseA: What about it?
+  textChoseB: Oh god you're right.
+  textConvinced: Good point. Let's end it
+  textChoseAA: We have to do something
+  textChoseBB: You're just a kid
+  textChoseBA: You're not making sense.
+  textChoseAB: Yes. We get cheap electricity.
+  textA: I want to talk with you about the nuclear power plant.
+  textB: I want to talk about the ugly building over there.
+  textAA: It endangers us! Imagine it'd blew up! We die if that happens!
+  textAB: I think it helps our city a lot!
+  textBA: 'We should shut that down. '
+  textBB: Having it is so mainstream these days.
+  textButtonA: It endangers us!
+  textButtonB: It is ugly!
+  textButtonAA: It'll kill us
+  textButtonBB: Mainstream
+  textButtonAB: It's useful!
+  textButtonBA: Let's destroy it.
+  correctAA: 1
+  correctAB: 0
+  correctBA: 0
+  correctBB: 0
+--- !u!23 &472872197
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472872195}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &472872198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472872195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &472872199
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472872195}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &472872200
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472872195}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.71, y: -0.29, z: 1.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &573508716 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114740645056266856, guid: 0d32ae0d85c42b141a04ec7e82cffecc,
@@ -470,7 +596,7 @@ MonoBehaviour:
   interactiveObject: 0
   correctOrder: 0
   npcName: Peter
-  textInitiate: Initiate Text!
+  textInitiate: Hey, what's up!?
   textObject: 
   textChoseA: I don't think that will convince me!
   textChoseB: That isn't right!
@@ -555,7 +681,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115247941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.71, y: -0.29, z: -3.59}
+  m_LocalPosition: {x: -6.71, y: -0.29, z: -4.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -749,12 +875,22 @@ Prefab:
     - target: {fileID: 224978306864516000, guid: 0d32ae0d85c42b141a04ec7e82cffecc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 13.516603
+      value: 2.0166035
       objectReference: {fileID: 0}
     - target: {fileID: 224978306864516000, guid: 0d32ae0d85c42b141a04ec7e82cffecc,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -150.73
+      value: -5.7299957
+      objectReference: {fileID: 0}
+    - target: {fileID: 224978306864516000, guid: 0d32ae0d85c42b141a04ec7e82cffecc,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.31786752
+      objectReference: {fileID: 0}
+    - target: {fileID: 224978306864516000, guid: 0d32ae0d85c42b141a04ec7e82cffecc,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.771
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d32ae0d85c42b141a04ec7e82cffecc, type: 2}
