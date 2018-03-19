@@ -20,57 +20,10 @@ public class DialogTest : MonoBehaviour {
     private bool optionB2 = false;
     private int dialogProgress;
 
-    //TextBox Texts
-    private string textInitiate;
-    private string textObject;
-    private string textChoseA;
-    private string textChoseB;
-    private string textConvinced;
-    private string textChoseA2;
-    private string textChoseB2;
-    //Wrong Answers
-    private string textA3;
-    private string textB3;
-
-    // A/B Answers
-    private string textA;
-    private string textB;
-    //Route A
-    private string textAA;
-    private string textAB;
-    //Route B
-    private string textBA;
-    private string textBB;
-
-
-
-
     // Use this for initialization
     void Start () {
         dialogProgress = 0;
         canvas.enabled = false;
-
-        //TextBox Texts for Dialog
-        textInitiate = "That's an example text!";
-        textChoseA = "You chose OptionA! I am still not convinced yet.";
-        textChoseB = "You chose OptionB! I am still not convinced yet.";
-        textChoseA2 = "You chose OptionA2! I dont think i can trust you.";
-        textChoseB2 = "You chose OptionB again! I dont think i can trust you.";
-        textConvinced = "You convinced me!";
-        textA3 = "You chose OptionA2! I dont think i can trust you.";
-        textB3 = "You chose OptionB again! I dont think i can trust you.";
-
-        //Possible Answers
-        textA = "OptionA";
-        textAA = "OptionAA";
-        textAB = "OptionAB";
-        textB = "OptionB";
-        textBB = "OptionBB";
-        textBA = "OptionBA";
-
-        //TextBox for interactive Objects
-        textObject = "That's an Object!";
-
     }
 	
     private void OnTriggerEnter(Collider other)
@@ -80,6 +33,16 @@ public class DialogTest : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
+        if (CorrectOrder())
+        {
+            interaction.correctOrder = true;
+        }
+        else
+        {
+            interaction.correctOrder = false;
+        }
+
+
         if (interaction.talk)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -116,7 +79,7 @@ public class DialogTest : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-     
+   
     }
 
 
@@ -124,28 +87,28 @@ public class DialogTest : MonoBehaviour {
     {
         if(dialogProgress == 0)
         {
-            text.text = textInitiate;
-            optionA.text = textA;
-            optionB.text = textB;
+            text.text = interaction.textInitiate;
+            optionA.text = interaction.textA;
+            optionB.text = interaction.textB;
         }
 
         if(dialogProgress == 1 && optionA1)
         {
-            text.text = textChoseA;
-            optionA.text = textAA;
-            optionB.text = textBA;
+            text.text = interaction.textChoseA;
+            optionA.text = interaction.textAA;
+            optionB.text = interaction.textBA;
         }
 
         if (dialogProgress == 1 && optionB1)
         {
-            text.text = textChoseB;
-            optionA.text = textBA;
-            optionB.text = textBB;
+            text.text = interaction.textChoseB;
+            optionA.text = interaction.textBA;
+            optionB.text = interaction.textBB;
         }
 
-        if (CorrectOrder() && dialogProgress == 2)
+        if (interaction.correctOrder && dialogProgress == 2)
         {
-            text.text = textConvinced;
+            text.text = interaction.textConvinced;
             interaction.convinced = true;
             FinishDialog();
             if (Input.GetKeyDown(KeyCode.Space))
@@ -153,16 +116,16 @@ public class DialogTest : MonoBehaviour {
                 CloseDialog();
             }
         }
-        else if(!CorrectOrder() && dialogProgress == 2 && optionA2)
+        else if(!interaction.correctOrder && dialogProgress == 2 && optionA2)
         {
-            text.text = textA3;
+            text.text = interaction.textChoseA2;
             FinishDialog();
 
 
         }
-        else if (!CorrectOrder() && dialogProgress == 2 && optionB2)
+        else if (!interaction.correctOrder && dialogProgress == 2 && optionB2)
         {
-            text.text = textB3;
+            text.text = interaction.textChoseB2;
             FinishDialog();
 
         }
@@ -170,7 +133,7 @@ public class DialogTest : MonoBehaviour {
 
     void ObjectProgression()
     {
-        text.text = textObject;
+        text.text = interaction.textObject;
     }
 
     void FinishDialog()
@@ -183,6 +146,11 @@ public class DialogTest : MonoBehaviour {
     public void CloseDialog()
     {
         canvas.enabled = false;
+        optionA1 = false;
+        optionA2 = false;
+        optionB1 = false;
+        optionB2 = false;
+        interaction.correctOrder = false;
     }
 
     public void ChoseOptionA()
