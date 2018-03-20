@@ -67,6 +67,7 @@ public class Interaction : MonoBehaviour {
        
         if(gameObject.tag == "Object")
         {
+            npcName = "You: ";
             interactiveObject = true;
         }
     }
