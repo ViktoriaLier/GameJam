@@ -5,16 +5,16 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour {
 
     public Animator anim;
-    public Rigidbody rbody;
+   
 
     private float inputH;
     private float inputV;
     
 
-    void Star()
+    void Start()
     {
         anim = GetComponent<Animator>();
-        rbody = GetComponent<Rigidbody>();
+        
     }
 
 
@@ -30,10 +30,6 @@ public class PlayerAnimation : MonoBehaviour {
 
         anim.SetFloat("inputH", inputH);
         anim.SetFloat("inputV", inputV);
-
-        float moveX = inputH * 20f * Time.deltaTime;
-        float moveZ = inputV * 50f * Time.deltaTime;
-
-        rbody.velocity = new Vector3(moveX, 0f, moveZ);
+        
     }
 }
