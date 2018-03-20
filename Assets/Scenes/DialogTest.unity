@@ -719,19 +719,6 @@ CapsuleCollider:
   m_Height: 1.7088729
   m_Direction: 1
   m_Center: {x: 0.0029457808, y: 0.82037586, z: 0}
---- !u!136 &1101745436
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1101745429}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.7088729
-  m_Direction: 1
-  m_Center: {x: 0.0029457808, y: 0.82037586, z: 0}
 --- !u!54 &1101745437
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1128,7 +1115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &2004602222
 MeshRenderer:
   m_ObjectHideFlags: 0
