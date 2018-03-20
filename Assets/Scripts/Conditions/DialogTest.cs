@@ -13,6 +13,7 @@ public class DialogTest : MonoBehaviour {
     public GameObject B;
     public Canvas canvas;
     public Animator anim;
+    public BarController followerBar;
 
     Interaction interaction;
 
@@ -419,6 +420,7 @@ public class DialogTest : MonoBehaviour {
         text.text = interaction.textConvinced;
         interaction.convinced = true;
         FinishDialog();
+        followerBar.peopleConvinced++;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             CloseDialog();
