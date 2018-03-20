@@ -20,10 +20,6 @@ public class PlayerAnimation : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown("w"))
-        {
-            anim.Play("Walk", -1, 1f);
-        }
 
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
