@@ -118,7 +118,7 @@ public class DialogTest : MonoBehaviour {
             DialogProgression();
 
         }
-        else
+        else if(!interaction.talk && !interaction.convinced)
         {
             ObjectProgression();
         }
