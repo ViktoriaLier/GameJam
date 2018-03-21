@@ -1009,7 +1009,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
-      value: -3.36
+      value: -1.597
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa5c35d01aee8bd4baf47b05b67967ba, type: 3}
@@ -1130,6 +1130,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -0.8000183
       objectReference: {fileID: 0}
+    - target: {fileID: 224967230209894080, guid: 0d32ae0d85c42b141a04ec7e82cffecc,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.7999878
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d32ae0d85c42b141a04ec7e82cffecc, type: 2}
   m_IsPrefabParent: 0
@@ -1237,6 +1242,7 @@ MonoBehaviour:
   interactiveObject: 0
   correctOrder: 0
   npcName: 
+  textBackstory: 
   textInitiate: 
   textObject: 
   textChoseA: 
@@ -1470,6 +1476,10 @@ MonoBehaviour:
   canvas: {fileID: 0}
   panel: {fileID: 0}
   anim: {fileID: 0}
+  eButton: {fileID: 0}
+  spaceButton: {fileID: 0}
+  escButton: {fileID: 0}
+  spaceButtonText: {fileID: 0}
 --- !u!95 &1415738414
 Animator:
   serializedVersion: 3
@@ -1602,6 +1612,7 @@ MonoBehaviour:
   interactiveObject: 0
   correctOrder: 0
   npcName: 
+  textBackstory: 
   textInitiate: 
   textObject: 
   textChoseA: 
@@ -1703,7 +1714,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1752943753
 GameObject:
