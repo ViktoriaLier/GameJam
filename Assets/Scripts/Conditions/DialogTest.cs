@@ -14,6 +14,10 @@ public class DialogTest : MonoBehaviour {
     public Canvas canvas;
     public GameObject panel;
     public Animator anim;
+    public Button eButton;
+    public Button spaceButton;
+    public Button escButton;
+    public Text spaceButtonText;
 
     Interaction interaction;
 
@@ -30,7 +34,7 @@ public class DialogTest : MonoBehaviour {
     // Use this for initialization
     void Start () {
         dialogProgress = 0;
-        canvas.enabled = false;
+        canvas.gameObject.SetActive(false);
 
         anim = GetComponent<Animator>();
     }
@@ -38,7 +42,7 @@ public class DialogTest : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         interaction = other.GetComponent<Interaction>();
-        canvas.enabled = true;
+        canvas.gameObject.SetActive(true);
     }
 
     private void OnTriggerStay(Collider other)
@@ -52,41 +56,70 @@ public class DialogTest : MonoBehaviour {
             interaction.correctOrder = false;
         }
 
+        if (interaction.textBackstory != "" && !currentlyTalking)
+        {
+            eButton.gameObject.SetActive(true);
+        }
+        else if(interaction.textBackstory == "")
+        {
+            eButton.gameObject.SetActive(false);
+        }
+
+        if (!interaction.interactiveObject && !interaction.convinced)
+        {
+            spaceButtonText.text = "Talk";
+            spaceButton.gameObject.SetActive(true);
+        }
+        else if(interaction.convinced)
+        {
+            spaceButton.gameObject.SetActive(false);
+        }
+        else if (interaction.interactiveObject)
+        {
+            spaceButtonText.text = " Interact";
+            spaceButton.gameObject.SetActive(true);
+        }
+
+        if (panel.activeSelf)
+        {
+            escButton.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && currentlyTalking == false && !interaction.convinced)
+        {
+            StartTalking();
+            spaceButtonText.text = "Continue";
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && escButton.gameObject.activeSelf)
+        {
+            CloseDialog();
+        }
 
         if (interaction.talk)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && eButton.gameObject.activeSelf)
             {
-                BackStory();
+                Backstory();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && currentlyTalking == false)
+            if (Input.GetKeyDown(KeyCode.Alpha1) && A.activeSelf)
             {
-                anim.SetBool("talking", true);
-                panel.SetActive(true);
-                optionA1 = false;
-                optionB1 = false;
-                optionAA = false;
-                optionAB = false;
-                optionBA = false;
-                optionBB = false;
-                A.SetActive(true);
-                B.SetActive(true);
-                dialogProgress = 0;
-                currentlyTalking = true;
+                ChoseOptionA();
+                Debug.Log("A has been pressed");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2) && B.activeSelf)
+            {
+                ChoseOptionB();
+                Debug.Log("B has been pressed");
             }
 
             DialogProgression();
-        }
 
-        if (interaction.interactiveObject)
+        }
+        else
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                canvas.enabled = true;
-                A.SetActive(false);
-                B.SetActive(false);
-            }
             ObjectProgression();
         }
     }
@@ -95,12 +128,6 @@ public class DialogTest : MonoBehaviour {
     {
         CloseDialog();
     }
-
-	// Update is called once per frame
-	void Update () {
-   
-    }
-
 
     void DialogProgression()
     {
@@ -114,7 +141,7 @@ public class DialogTest : MonoBehaviour {
 
         if(dialogProgress == 1)
         {
-            if (optionA1)
+            if (optionA1 && !interaction.convinced)
             {
                 if (playerTalking)
                 {
@@ -138,7 +165,7 @@ public class DialogTest : MonoBehaviour {
                 }
             }
 
-            if (optionB1)
+            if (optionB1 && !interaction.convinced)
             {
                 if (playerTalking)
                 {
@@ -165,8 +192,9 @@ public class DialogTest : MonoBehaviour {
 
         if(dialogProgress == 2)
         {
-            if (optionAA)
+            if (optionAA && !interaction.convinced)
             {
+                Debug.Log("optionAA is: " + optionAA);
                 if (playerTalking)
                 {
                     nameWindow.text = "You: ";
@@ -196,8 +224,9 @@ public class DialogTest : MonoBehaviour {
  
             }
 
-            if (optionAB)
+            if (optionAB && !interaction.convinced)
             {
+                Debug.Log("optionAB is: " + optionAB);
                 if (playerTalking)
                 {
                     nameWindow.text = "You: ";
@@ -227,8 +256,9 @@ public class DialogTest : MonoBehaviour {
 
             }
 
-            if (optionBA)
+            if (optionBA && !interaction.convinced)
             {
+                Debug.Log("optionBA is: " + optionBA);
                 if (playerTalking)
                 {
                     nameWindow.text = "You: ";
@@ -258,8 +288,9 @@ public class DialogTest : MonoBehaviour {
 
             }
 
-            if (optionBB)
+            if (optionBB && !interaction.convinced)
             {
+                Debug.Log("optionBB is: " + optionBB);
                 if (playerTalking)
                 {
                     nameWindow.text = "You: ";
@@ -299,12 +330,15 @@ public class DialogTest : MonoBehaviour {
     {
         A.SetActive(false);
         B.SetActive(false);
+        spaceButton.gameObject.SetActive(false);
     }
 
     #region ButtonBehaviour
     public void CloseDialog()
     {
-        canvas.enabled = false;
+        panel.SetActive(false);
+        canvas.gameObject.SetActive(false);
+        escButton.gameObject.SetActive(false);
         optionA1 = false;
         optionB1 = false;
         optionAA = false;
@@ -316,6 +350,35 @@ public class DialogTest : MonoBehaviour {
         dialogProgress = 0;
         currentlyTalking = false;
         anim.SetBool("talking", false);
+    }
+
+    public void StartTalking()
+    {
+        if (interaction.interactiveObject)
+        {
+            canvas.gameObject.SetActive(true);
+            panel.SetActive(true);
+            A.SetActive(false);
+            B.SetActive(false);
+        }
+        else
+        {
+            if (!interaction.convinced)
+            {
+                anim.SetBool("talking", true);
+                panel.SetActive(true);
+                optionA1 = false;
+                optionB1 = false;
+                optionAA = false;
+                optionAB = false;
+                optionBA = false;
+                optionBB = false;
+                A.SetActive(true);
+                B.SetActive(true);
+                dialogProgress = 0;
+                currentlyTalking = true;
+            }
+        }
     }
 
     public void ChoseOptionA()
@@ -426,9 +489,11 @@ public class DialogTest : MonoBehaviour {
         text.text = interaction.textConvinced;
         interaction.convinced = true;
         FinishDialog();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CloseDialog();
-        }
+    }
+
+    public void Backstory()
+    {
+        text.text = interaction.textBackstory;
+        panel.SetActive(true);
     }
 }
