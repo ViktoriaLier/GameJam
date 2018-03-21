@@ -38,6 +38,7 @@ public class DialogTest : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         interaction = other.GetComponent<Interaction>();
+        canvas.enabled = true;
     }
 
     private void OnTriggerStay(Collider other)
@@ -54,10 +55,15 @@ public class DialogTest : MonoBehaviour {
 
         if (interaction.talk)
         {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                BackStory();
+            }
+
             if (Input.GetKeyDown(KeyCode.Space) && currentlyTalking == false)
             {
                 anim.SetBool("talking", true);
-                canvas.enabled = true;
+                panel.SetActive(true);
                 optionA1 = false;
                 optionB1 = false;
                 optionAA = false;

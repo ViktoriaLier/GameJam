@@ -13,6 +13,7 @@ public class Interaction : MonoBehaviour {
     public string npcName;
 
     //TextBox Texts
+    public string textBackstory;
     public string textInitiate;
     public string textObject;
     public string textChoseA; 
