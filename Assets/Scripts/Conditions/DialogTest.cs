@@ -27,6 +27,7 @@ public class DialogTest : MonoBehaviour {
     private bool optionAB = false;
     private bool optionBA = false;
     private bool optionBB = false;
+    private bool backstory = false;
     private bool playerTalking = false;
     private bool currentlyTalking = false;
     private int dialogProgress;
@@ -76,7 +77,7 @@ public class DialogTest : MonoBehaviour {
         }
         else if (interaction.interactiveObject)
         {
-            spaceButtonText.text = " Interact";
+            spaceButtonText.text = "  Interact";
             spaceButton.gameObject.SetActive(true);
         }
 
@@ -88,7 +89,11 @@ public class DialogTest : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && currentlyTalking == false && !interaction.convinced)
         {
             StartTalking();
-            spaceButtonText.text = "Continue";
+        }
+
+        if(dialogProgress > 0)
+        {
+            spaceButtonText.text = "     Continue";
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && escButton.gameObject.activeSelf)
@@ -96,12 +101,13 @@ public class DialogTest : MonoBehaviour {
             CloseDialog();
         }
 
-        if (interaction.talk)
+        if (Input.GetKeyDown(KeyCode.E) && eButton.gameObject.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.E) && eButton.gameObject.activeSelf)
-            {
-                Backstory();
-            }
+            Backstory();
+        }
+
+        if (interaction.talk && !backstory)
+        {
 
             if (Input.GetKeyDown(KeyCode.Alpha1) && A.activeSelf)
             {
@@ -365,6 +371,7 @@ public class DialogTest : MonoBehaviour {
         {
             if (!interaction.convinced)
             {
+                backstory = false;
                 anim.SetBool("talking", true);
                 panel.SetActive(true);
                 optionA1 = false;
@@ -495,5 +502,6 @@ public class DialogTest : MonoBehaviour {
     {
         text.text = interaction.textBackstory;
         panel.SetActive(true);
+        backstory = true;
     }
 }
