@@ -12,6 +12,7 @@ public class DialogTest : MonoBehaviour {
     public GameObject A;
     public GameObject B;
     public Canvas canvas;
+    public GameObject panel;
     public Animator anim;
 
     Interaction interaction;
