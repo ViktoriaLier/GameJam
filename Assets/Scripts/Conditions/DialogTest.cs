@@ -12,6 +12,8 @@ public class DialogTest : MonoBehaviour {
     public GameObject A;
     public GameObject B;
     public Canvas canvas;
+    public GameObject panel;
+    public Animator anim;
 
     Interaction interaction;
 
@@ -29,11 +31,14 @@ public class DialogTest : MonoBehaviour {
     void Start () {
         dialogProgress = 0;
         canvas.enabled = false;
+
+        anim = GetComponent<Animator>();
     }
 	
     private void OnTriggerEnter(Collider other)
     {
         interaction = other.GetComponent<Interaction>();
+        canvas.enabled = true;
     }
 
     private void OnTriggerStay(Collider other)
@@ -50,9 +55,15 @@ public class DialogTest : MonoBehaviour {
 
         if (interaction.talk)
         {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                BackStory();
+            }
+
             if (Input.GetKeyDown(KeyCode.Space) && currentlyTalking == false)
             {
-                canvas.enabled = true;
+                anim.SetBool("talking", true);
+                panel.SetActive(true);
                 optionA1 = false;
                 optionB1 = false;
                 optionAA = false;
@@ -304,6 +315,7 @@ public class DialogTest : MonoBehaviour {
         playerTalking = false;
         dialogProgress = 0;
         currentlyTalking = false;
+        anim.SetBool("talking", false);
     }
 
     public void ChoseOptionA()

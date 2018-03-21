@@ -13,6 +13,7 @@ public class Interaction : MonoBehaviour {
     public string npcName;
 
     //TextBox Texts
+    public string textBackstory;
     public string textInitiate;
     public string textObject;
     public string textChoseA; 
@@ -67,6 +68,7 @@ public class Interaction : MonoBehaviour {
        
         if(gameObject.tag == "Object")
         {
+            npcName = "You: ";
             interactiveObject = true;
         }
     }
