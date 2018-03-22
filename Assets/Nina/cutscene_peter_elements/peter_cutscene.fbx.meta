@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: d0b1acb91ba3d9a4a84a50f1972c301f
+timeCreated: 1521715202
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: atomic_tank_low_poly
+    100002: atomic_tank_low_poly1
+    100004: atomic_tank_low_poly2
+    100006: atomic_tank_low_poly3
+    100008: atomic_tank_low_poly4
+    100010: atomic_tank_low_poly5
+    100012: atomic_tank_low_poly6
+    100014: atomic_tank_low_poly7
+    100016: atomic_tank_low_poly8
+    100018: background
+    100020: employee_sign:employee_sign
+    100022: fence
+    100024: fence_lowpoly
+    100026: fence_lowpoly1
+    100028: fence_lowpoly2
+    100030: fence_lowpoly3
+    100032: kernkraftwerk_lowpoly3
+    100034: nuclear_sign:nuclear_sign
+    100036: pCube12
+    100038: //RootNode
+    100040: street
+    100042: tanks
+    100044: transform132
+    100046: wanted_poster:pPlane1
+    400000: atomic_tank_low_poly
+    400002: atomic_tank_low_poly1
+    400004: atomic_tank_low_poly2
+    400006: atomic_tank_low_poly3
+    400008: atomic_tank_low_poly4
+    400010: atomic_tank_low_poly5
+    400012: atomic_tank_low_poly6
+    400014: atomic_tank_low_poly7
+    400016: atomic_tank_low_poly8
+    400018: background
+    400020: employee_sign:employee_sign
+    400022: fence
+    400024: fence_lowpoly
+    400026: fence_lowpoly1
+    400028: fence_lowpoly2
+    400030: fence_lowpoly3
+    400032: kernkraftwerk_lowpoly3
+    400034: nuclear_sign:nuclear_sign
+    400036: pCube12
+    400038: //RootNode
+    400040: street
+    400042: tanks
+    400044: transform132
+    400046: wanted_poster:pPlane1
+    2100000: aiStandardSurface4
+    2100002: wanted_poster_lambert2SG1
+    2100004: employye_sign_texture
+    2100006: aiStandardSurface5
+    2100008: tank_texture
+    2100010: fence_texture
+    2100012: lambert6
+    2300000: atomic_tank_low_poly
+    2300002: atomic_tank_low_poly1
+    2300004: atomic_tank_low_poly2
+    2300006: atomic_tank_low_poly3
+    2300008: atomic_tank_low_poly4
+    2300010: atomic_tank_low_poly5
+    2300012: atomic_tank_low_poly6
+    2300014: atomic_tank_low_poly7
+    2300016: atomic_tank_low_poly8
+    2300018: background
+    2300020: employee_sign:employee_sign
+    2300022: fence_lowpoly
+    2300024: fence_lowpoly1
+    2300026: fence_lowpoly2
+    2300028: fence_lowpoly3
+    2300030: kernkraftwerk_lowpoly3
+    2300032: nuclear_sign:nuclear_sign
+    2300034: wanted_poster:pPlane1
+    3300000: atomic_tank_low_poly
+    3300002: atomic_tank_low_poly1
+    3300004: atomic_tank_low_poly2
+    3300006: atomic_tank_low_poly3
+    3300008: atomic_tank_low_poly4
+    3300010: atomic_tank_low_poly5
+    3300012: atomic_tank_low_poly6
+    3300014: atomic_tank_low_poly7
+    3300016: atomic_tank_low_poly8
+    3300018: background
+    3300020: employee_sign:employee_sign
+    3300022: fence_lowpoly
+    3300024: fence_lowpoly1
+    3300026: fence_lowpoly2
+    3300028: fence_lowpoly3
+    3300030: kernkraftwerk_lowpoly3
+    3300032: nuclear_sign:nuclear_sign
+    3300034: wanted_poster:pPlane1
+    4300000: nuclear_sign:nuclear_sign
+    4300002: wanted_poster:pPlane1
+    4300004: employee_sign:employee_sign
+    4300006: kernkraftwerk_lowpoly3
+    4300008: atomic_tank_low_poly3
+    4300010: atomic_tank_low_poly4
+    4300012: atomic_tank_low_poly5
+    4300014: atomic_tank_low_poly6
+    4300016: atomic_tank_low_poly7
+    4300018: atomic_tank_low_poly8
+    4300020: atomic_tank_low_poly2
+    4300022: atomic_tank_low_poly1
+    4300024: atomic_tank_low_poly
+    4300026: fence_lowpoly3
+    4300028: fence_lowpoly2
+    4300030: fence_lowpoly1
+    4300032: fence_lowpoly
+    4300034: background
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

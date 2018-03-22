@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogTest : MonoBehaviour {
 
@@ -28,6 +29,7 @@ public class DialogTest : MonoBehaviour {
     private bool optionBA = false;
     private bool optionBB = false;
     private bool backstory = false;
+    private bool door = false;
     private bool playerTalking = false;
     private bool currentlyTalking = false;
     private int dialogProgress;
@@ -48,86 +50,103 @@ public class DialogTest : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (CorrectOrder())
+        if (!door)
         {
-            interaction.correctOrder = true;
+            if (CorrectOrder())
+            {
+                interaction.correctOrder = true;
+            }
+            else
+            {
+                interaction.correctOrder = false;
+            }
+
+            if (interaction.textBackstory != "" && !currentlyTalking)
+            {
+                eButton.gameObject.SetActive(true);
+            }
+            else if (interaction.textBackstory == "")
+            {
+                eButton.gameObject.SetActive(false);
+            }
+
+            if (!interaction.interactiveObject && !interaction.convinced)
+            {
+                spaceButtonText.text = "Talk";
+                spaceButton.gameObject.SetActive(true);
+            }
+            else if (interaction.convinced)
+            {
+                spaceButton.gameObject.SetActive(false);
+            }
+            else if (interaction.interactiveObject)
+            {
+                spaceButtonText.text = "   Interact";
+                spaceButton.gameObject.SetActive(true);
+            }
+
+            if (panel.activeSelf)
+            {
+                escButton.gameObject.SetActive(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && currentlyTalking == false && !interaction.convinced)
+            {
+                StartTalking();
+            }
+
+            if (dialogProgress > 0)
+            {
+                spaceButtonText.text = "     Continue";
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) && escButton.gameObject.activeSelf)
+            {
+                CloseDialog();
+            }
+
+            if (Input.GetKeyDown(KeyCode.E) && eButton.gameObject.activeSelf)
+            {
+                Backstory();
+            }
+
+            if (interaction.talk && !backstory)
+            {
+
+                if (Input.GetKeyDown(KeyCode.Alpha1) && A.activeSelf)
+                {
+                    ChoseOptionA();
+                    Debug.Log("A has been pressed");
+                }
+
+                if (Input.GetKeyDown(KeyCode.Alpha2) && B.activeSelf)
+                {
+                    ChoseOptionB();
+                    Debug.Log("B has been pressed");
+                }
+
+                DialogProgression();
+
+            }
+            else if (!interaction.talk && !interaction.convinced)
+            {
+                ObjectProgression();
+            }
         }
         else
         {
-            interaction.correctOrder = false;
-        }
-
-        if (interaction.textBackstory != "" && !currentlyTalking)
-        {
-            eButton.gameObject.SetActive(true);
-        }
-        else if(interaction.textBackstory == "")
-        {
-            eButton.gameObject.SetActive(false);
-        }
-
-        if (!interaction.interactiveObject && !interaction.convinced)
-        {
-            spaceButtonText.text = "Talk";
-            spaceButton.gameObject.SetActive(true);
-        }
-        else if(interaction.convinced)
-        {
-            spaceButton.gameObject.SetActive(false);
-        }
-        else if (interaction.interactiveObject)
-        {
-            spaceButtonText.text = "  Interact";
-            spaceButton.gameObject.SetActive(true);
-        }
-
-        if (panel.activeSelf)
-        {
-            escButton.gameObject.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && currentlyTalking == false && !interaction.convinced)
-        {
-            StartTalking();
-        }
-
-        if(dialogProgress > 0)
-        {
-            spaceButtonText.text = "     Continue";
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && escButton.gameObject.activeSelf)
-        {
-            CloseDialog();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && eButton.gameObject.activeSelf)
-        {
-            Backstory();
-        }
-
-        if (interaction.talk && !backstory)
-        {
-
-            if (Input.GetKeyDown(KeyCode.Alpha1) && A.activeSelf)
+            if(other.gameObject.tag == "Door")
             {
-                ChoseOptionA();
-                Debug.Log("A has been pressed");
+                spaceButtonText.text = "     Leave";
+
+                if (Input.GetKeyDown(KeyCode.Space) && !currentlyTalking)
+                {
+                    SceneManager.LoadScene("NewCity");
+                }
             }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2) && B.activeSelf)
-            {
-                ChoseOptionB();
-                Debug.Log("B has been pressed");
-            }
-
-            DialogProgression();
-
+            
         }
-        else if(!interaction.talk && !interaction.convinced)
-        {
-            ObjectProgression();
-        }
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -332,6 +351,13 @@ public class DialogTest : MonoBehaviour {
         text.text = interaction.textObject;
     }
 
+    void DoorInteraction()
+    {
+        text.text = interaction.textObject;
+        panel.SetActive(true);
+        door = true;
+    }
+
     void FinishDialog()
     {
         A.SetActive(false);
@@ -504,4 +530,5 @@ public class DialogTest : MonoBehaviour {
         panel.SetActive(true);
         backstory = true;
     }
+
 }
