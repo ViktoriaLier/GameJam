@@ -8901,33 +8901,44 @@ MonoBehaviour:
   convinced: 0
   interactiveObject: 0
   correctOrder: 0
-  npcName: 
-  textBackstory: 
-  textInitiate: 
+  npcName: William
+  textBackstory: William is a friendly old man.  He lost his home 40 years ago because
+    a new nuclear power plant was being built. He came to this town after being homeless
+    for years to find a place to peacefully live in his old days. Everyone just calls
+    him grandpa.
+  textInitiate: Hello Claire! How is our little sunshine doing?
   textObject: 
-  textChoseA: 
-  textChoseB: 
-  textConvinced: 
-  textChoseAA: 
-  textChoseBB: 
-  textChoseBA: 
-  textChoseAB: 
-  textA: 
-  textB: 
-  textAA: 
-  textAB: 
-  textBA: 
-  textBB: 
-  textButtonA: 
-  textButtonB: 
-  textButtonAA: 
-  textButtonBB: 
-  textButtonAB: 
-  textButtonBA: 
-  correctAA: 0
+  textChoseA: 'Oh my dear child. I think I''m too old to shout paroles and roam the
+    streets for hours... '
+  textChoseB: My diabetes is stable for now and I was just about to get some snacks
+    from the shop Care to join me?
+  textConvinced: Alright then kiddo! Let's see what that idea is about.
+  textChoseAA: ' Alright then kiddo! Let''s see what that idea is about.'
+  textChoseBB: Okay Claire. Take care! Remember to be better safe thatn sorry. Your
+    mother needs you.
+  textChoseBA: I guess everyone knows that sadly. Sometimes they don't want to sell
+    me some of those tasty biscuits.
+  textChoseAB: I'm always supporting you mentally. I know you can change things and
+    you know where to find me if you need advice.
+  textA: Hello Grandpa William. I'm doing great! I have so many new ideas for demonstrations.
+    You should definetely join one of them.
+  textB: Hello grandpa William! I'm doing good. How are you doing?
+  textAA: Not at all! I have a great idea that is perfect for you. Trust me!
+  textAB: I guess you're right. Keep yourself safe grandpa. I'll walk the streets
+    for you!
+  textBA: I hope you're taking your meds accordingly. I know how much you like the
+    sweet biscuits from the shop!
+  textBB: That's good to hear. Sorry I got no time. I need to get moving for the demonstration.
+  textButtonA: New Plans
+  textButtonB: How are you?
+  textButtonAA: Trust me
+  textButtonBB: I need to go
+  textButtonAB: You're right
+  textButtonBA: Keep safe
+  correctAA: 1
   correctAB: 0
   correctBA: 0
-  correctBB: 1
+  correctBB: 0
 --- !u!1001 &1758850722
 Prefab:
   m_ObjectHideFlags: 0
@@ -9520,33 +9531,41 @@ MonoBehaviour:
   convinced: 0
   interactiveObject: 0
   correctOrder: 0
-  npcName: 
-  textBackstory: 
-  textInitiate: 
+  npcName: Caroline
+  textBackstory: Caroline was always a kind and caring woman. I got to know her when
+    I turned 13. She started working at the shop close to our apartment. She always
+    lived in Sadley.
+  textInitiate: Hey Claire! Are you interested in more of the bags you bought last
+    week?
   textObject: 
-  textChoseA: 
-  textChoseB: 
-  textConvinced: 
-  textChoseAA: 
-  textChoseBB: 
-  textChoseBA: 
-  textChoseAB: 
-  textA: 
-  textB: 
-  textAA: 
-  textAB: 
-  textBA: 
-  textBB: 
-  textButtonA: 
-  textButtonB: 
-  textButtonAA: 
-  textButtonBB: 
-  textButtonAB: 
-  textButtonBA: 
+  textChoseA: Don't worry! I have enough bags left for you at the shop. Just drop
+    by tomorrow afternoon.
+  textChoseB: The anti nuclear power plant one coming up tomorrow?
+  textConvinced: Oh yes my dear! I'd love to join you! I'm sure it'll be awesome!
+  textChoseAA: Well that's too bad. Have fun tomorrow!
+  textChoseBB: Oh yes my dear! I'd love to join you! I'm sure it'll be awesome!
+  textChoseBA: Oh okay then. I was going to stay at the shop tomorrow anyways.
+  textChoseAB: Do you really think I can always give you free stuff!? Unbelievable
+  textA: 'Exactly why I wanted to talk to you! Your bags are amazing. '
+  textB: No thanks Caroline. I have to talk to you about the upcoming demonstration.
+  textAA: Sorry I can't drop by tomorrow. The demonstration I was organizing is coming
+    up tomorrow. I'll come by another time.
+  textAB: Can you make me one with a special sign? I really need it but I don't have
+    money...
+  textBA: I'm going there but I'd like to ask you not to come there. It'd be weird
+    going there together. It's too personal for me.
+  textBB: Yes. I'd like you to join me in the demonstration. I worked for months to
+    set it up and it'd be great if you'd come too.
+  textButtonA: Of course
+  textButtonB: No thanks
+  textButtonAA: Sorry
+  textButtonBB: Join me
+  textButtonAB: A gift?
+  textButtonBA: Yes
   correctAA: 0
   correctAB: 0
   correctBA: 0
-  correctBB: 0
+  correctBB: 1
 --- !u!136 &1810339002
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10337,31 +10356,40 @@ MonoBehaviour:
   convinced: 0
   interactiveObject: 0
   correctOrder: 0
-  npcName: 
-  textBackstory: 
-  textInitiate: 
+  npcName: Peter
+  textBackstory: Peter is a hardworking employee at the power plant. He is a nice
+    guy but is always scared to lose his job.
+  textInitiate: Hey Claire. What are you up to?
   textObject: 
-  textChoseA: 
-  textChoseB: 
-  textConvinced: 
-  textChoseAA: 
-  textChoseBB: 
-  textChoseBA: 
-  textChoseAB: 
-  textA: 
-  textB: 
-  textAA: 
-  textAB: 
-  textBA: 
-  textBB: 
-  textButtonA: 
-  textButtonB: 
-  textButtonAA: 
-  textButtonBB: 
-  textButtonAB: 
-  textButtonBA: 
+  textChoseA: Really?! That would be awesome!! Could you give me his number? I'd rather
+    work at a real craftsmen company than pressing a button all day long.
+  textChoseB: I'm doing good and you? Just the same prosy work as usual.
+  textConvinced: Of course Claire! I'd like to join you just fill me in on the way.
+  textChoseAA: Alright Claire, have a nice day.
+  textChoseBB: Stop judging me for having a job in a company you don't approve of.
+    I need to pay my bills too! Goodbye Claire.
+  textChoseBA: I hope you stay safe. I have to go now.
+  textChoseAB: Of course Claire! I'd like to join you just fill me in on the way.
+  textA: Hey Peter. I wanted to talk about a better job for you. My uncle next town
+    reopened his craftsmen company and he is searching for workers like you.
+  textB: Hey Peter. I just wanted to check on how you are doing.
+  textAA: I'm in kind of a hurry right now so I'll send you his number over in the
+    next couple of days. See you around!
+  textAB: Sure thing! Are you interested in helping me to demonstrate against your
+    now former employer? I have some thing planned to do and would like it if you
+    joined me.
+  textBA: I'm doing good. Still busy demonstrating against your employer..
+  textBB: You're doing good? I don't know how you can live happily with that nuclear
+    power plant around. You even work for them! I#m feeling sick as soon as I see
+    it.
+  textButtonA: Job
+  textButtonB: How is it?
+  textButtonAA: Favor
+  textButtonBB: Your employer
+  textButtonAB: Protest
+  textButtonBA: Good thanks
   correctAA: 0
-  correctAB: 0
+  correctAB: 1
   correctBA: 0
   correctBB: 0
 --- !u!114 &1902248616 stripped
