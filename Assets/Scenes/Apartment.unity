@@ -1093,9 +1093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cc5e6d6f7ed81468fb34dd435522c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1880847356}
   targetHeight: 1.7
-  distance: 12
+  distance: 2
   offsetWall: 0.1
   maxDistance: 20
   minDistance: 0.6
@@ -1441,6 +1441,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 933948200}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &969231052 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: 2cc407e7f556d52468128c5bfe59ccc6, type: 3}
+  m_PrefabInternal: {fileID: 77513503}
+--- !u!65 &969231053
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969231052}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06324869, y: 0.056350507, z: 0.07079821}
+  m_Center: {x: -0.015786074, y: -0.057323765, z: 0.13644902}
 --- !u!1 &1015936713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,6 +1634,24 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 3d05a630f15d6524fa366f600791e3d4, type: 3}
   m_PrefabInternal: {fileID: 1024794019}
+--- !u!1 &1201711646 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: 13a32459de24e774cb6922137854690b, type: 3}
+  m_PrefabInternal: {fileID: 468948423}
+--- !u!64 &1201711649
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201711646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!1 &1219395321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,3 +2580,8 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: 7b1ccc1b388ffa2419915c1488fd48d8, type: 3}
   m_PrefabInternal: {fileID: 1770466205}
+--- !u!4 &1880847356 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4479488480006210, guid: 58f9047060856164e80f51793e850d41,
+    type: 2}
+  m_PrefabInternal: {fileID: 400232120}
