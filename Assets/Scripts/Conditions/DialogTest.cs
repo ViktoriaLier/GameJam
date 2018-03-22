@@ -40,6 +40,7 @@ public class DialogTest : MonoBehaviour {
         canvas.gameObject.SetActive(false);
 
         anim = GetComponent<Animator>();
+
     }
 	
     private void OnTriggerEnter(Collider other)
@@ -50,6 +51,7 @@ public class DialogTest : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
+
         if (!door)
         {
             if (CorrectOrder())
@@ -128,9 +130,13 @@ public class DialogTest : MonoBehaviour {
                 DialogProgression();
 
             }
-            else if (!interaction.talk && !interaction.convinced)
+            else if (!interaction.talk && !interaction.convinced && other.gameObject.tag != "Door")
             {
                 ObjectProgression();
+            }
+            else if (!interaction.talk && !interaction.convinced && other.gameObject.tag == "Door")
+            {
+                DoorInteraction();
             }
         }
         else
@@ -138,6 +144,9 @@ public class DialogTest : MonoBehaviour {
             if(other.gameObject.tag == "Door")
             {
                 spaceButtonText.text = "     Leave";
+                spaceButton.gameObject.SetActive(true);
+                A.SetActive(false);
+                B.SetActive(false);
 
                 if (Input.GetKeyDown(KeyCode.Space) && !currentlyTalking)
                 {
@@ -356,6 +365,7 @@ public class DialogTest : MonoBehaviour {
         text.text = interaction.textObject;
         panel.SetActive(true);
         door = true;
+        Debug.Log("Door is: " + door);
     }
 
     void FinishDialog()
@@ -382,6 +392,7 @@ public class DialogTest : MonoBehaviour {
         dialogProgress = 0;
         currentlyTalking = false;
         anim.SetBool("talking", false);
+        door = false;
     }
 
     public void StartTalking()
