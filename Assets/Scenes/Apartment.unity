@@ -273,7 +273,8 @@ MonoBehaviour:
   npcName: 
   textBackstory: 
   textInitiate: 
-  textObject: 
+  textObject: An old picture of my mother and father. My father while my mother was
+    pregnant with me. She always tried to make up for his absence.
   textChoseA: 
   textChoseB: 
   textConvinced: 
@@ -508,6 +509,10 @@ Prefab:
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fe165488c45898a47a3f97494deadaee, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe165488c45898a47a3f97494deadaee, type: 3}
   m_IsPrefabParent: 0
@@ -515,6 +520,53 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: fe165488c45898a47a3f97494deadaee, type: 3}
   m_PrefabInternal: {fileID: 210654809}
+--- !u!1 &210654811 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: fe165488c45898a47a3f97494deadaee, type: 3}
+  m_PrefabInternal: {fileID: 210654809}
+--- !u!114 &210654812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 210654811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989263e60d17c5948afabddd93e32c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talk: 0
+  convinced: 0
+  interactiveObject: 1
+  correctOrder: 0
+  npcName: 
+  textBackstory: 
+  textInitiate: 
+  textObject: I'm on my way to the city. To find people that help me demonstrating
+    against the nuclear power plant in my town.
+  textChoseA: 
+  textChoseB: 
+  textConvinced: 
+  textChoseAA: 
+  textChoseBB: 
+  textChoseBA: 
+  textChoseAB: 
+  textA: 
+  textB: 
+  textAA: 
+  textAB: 
+  textBA: 
+  textBB: 
+  textButtonA: 
+  textButtonB: 
+  textButtonAA: 
+  textButtonBB: 
+  textButtonAB: 
+  textButtonBA: 
+  correctAA: 0
+  correctAB: 0
+  correctBA: 0
+  correctBB: 0
 --- !u!1001 &292764823
 Prefab:
   m_ObjectHideFlags: 0
@@ -1914,7 +1966,8 @@ MonoBehaviour:
   npcName: 
   textBackstory: 
   textInitiate: 
-  textObject: 
+  textObject: The TV is always running. My mother says it feels like someone is always
+    here.
   textChoseA: 
   textChoseB: 
   textConvinced: 
@@ -2311,7 +2364,7 @@ MonoBehaviour:
   npcName: 
   textBackstory: 
   textInitiate: 
-  textObject: 
+  textObject: This is my mother. She has her bad days. Today is one of them.
   textChoseA: 
   textChoseB: 
   textConvinced: 
@@ -3090,7 +3143,9 @@ MonoBehaviour:
   npcName: 
   textBackstory: 
   textInitiate: 
-  textObject: 
+  textObject: My mother doesn't own a lot of clothes anymore. We had to sell a lot
+    of her belongings to pay the hospital bills. She says it doesn't bother her...
+    But I doubt it.
   textChoseA: 
   textChoseB: 
   textConvinced: 
@@ -3221,7 +3276,8 @@ MonoBehaviour:
   npcName: 
   textBackstory: 
   textInitiate: 
-  textObject: 
+  textObject: This is an illness report a doctor filed for her. She never got back
+    into work. The cancer spread too fast.
   textChoseA: 
   textChoseB: 
   textConvinced: 
