@@ -1,9 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d0b1acb91ba3d9a4a84a50f1972c301f
 timeCreated: 1521715202
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
+=======
+guid: 03efd7aa5bf4f3244b70400e9e624888
+timeCreated: 1521714857
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+>>>>>>> 4ff6ae9b7f5b9254eaafe7e37052afd766665133
   fileIDToRecycleName:
     100000: atomic_tank_low_poly
     100002: atomic_tank_low_poly1
@@ -53,6 +61,7 @@ ModelImporter:
     400042: tanks
     400044: transform132
     400046: wanted_poster:pPlane1
+<<<<<<< HEAD
     2100000: aiStandardSurface4
     2100002: wanted_poster_lambert2SG1
     2100004: employye_sign_texture
@@ -60,6 +69,8 @@ ModelImporter:
     2100008: tank_texture
     2100010: fence_texture
     2100012: lambert6
+=======
+>>>>>>> 4ff6ae9b7f5b9254eaafe7e37052afd766665133
     2300000: atomic_tank_low_poly
     2300002: atomic_tank_low_poly1
     2300004: atomic_tank_low_poly2
@@ -115,12 +126,18 @@ ModelImporter:
     4300032: fence_lowpoly
     4300034: background
     9500000: //RootNode
+<<<<<<< HEAD
   externalObjects: {}
+=======
+>>>>>>> 4ff6ae9b7f5b9254eaafe7e37052afd766665133
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+<<<<<<< HEAD
     materialLocation: 1
+=======
+>>>>>>> 4ff6ae9b7f5b9254eaafe7e37052afd766665133
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -133,7 +150,10 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+<<<<<<< HEAD
     importAnimatedCustomProperties: 0
+=======
+>>>>>>> 4ff6ae9b7f5b9254eaafe7e37052afd766665133
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -158,8 +178,11 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+<<<<<<< HEAD
     preserveHierarchy: 0
     indexFormat: 0
+=======
+>>>>>>> 4ff6ae9b7f5b9254eaafe7e37052afd766665133
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
