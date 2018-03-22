@@ -150,7 +150,7 @@ public class DialogTest : MonoBehaviour {
 
                 if (Input.GetKeyDown(KeyCode.Space) && !currentlyTalking)
                 {
-                    SceneManager.LoadScene("NewCity");
+                    SceneManager.LoadScene("supercity");
                 }
             }
             
