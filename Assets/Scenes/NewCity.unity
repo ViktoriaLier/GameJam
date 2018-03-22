@@ -831,44 +831,9 @@ Transform:
   m_Father: {fileID: 50102947}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &837135709 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1240055577555678, guid: 4e6df588bc550664baef3aa8d78ccd58,
-    type: 2}
-  m_PrefabInternal: {fileID: 1540529117}
---- !u!136 &837135712
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 837135709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.525203
-  m_Height: 1.8292893
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.72317827, z: 0.025203032}
---- !u!136 &837135713
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 837135709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.25461155
-  m_Height: 1.854272
-  m_Direction: 1
-  m_Center: {x: 0.05673722, y: 0.69740325, z: 0.02853783}
 --- !u!1 &966444470 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 436b3195c179f4d4cb9c18d7885021cd, type: 3}
-  m_PrefabInternal: {fileID: 1124930665}
---- !u!4 &966444471 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: 436b3195c179f4d4cb9c18d7885021cd, type: 3}
   m_PrefabInternal: {fileID: 1124930665}
 --- !u!65 &966444472
 BoxCollider:
@@ -994,8 +959,8 @@ Transform:
   m_LocalScale: {x: 1.6884375, y: 1.6884379, z: 1.6884379}
   m_Children:
   - {fileID: 2047862221}
-  - {fileID: 966444471}
-  - {fileID: 1520052844}
+  - {fileID: 1124930666}
+  - {fileID: 1533250411}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1061,6 +1026,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 436b3195c179f4d4cb9c18d7885021cd, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &1124930666 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1124930665}
 --- !u!4 &1133195555 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4479488480006210, guid: 58f9047060856164e80f51793e850d41,
@@ -1371,10 +1340,6 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 436b3195c179f4d4cb9c18d7885021cd, type: 3}
   m_PrefabInternal: {fileID: 1533250410}
---- !u!4 &1520052844 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: 436b3195c179f4d4cb9c18d7885021cd, type: 3}
-  m_PrefabInternal: {fileID: 1533250410}
 --- !u!65 &1520052845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1449,6 +1414,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 436b3195c179f4d4cb9c18d7885021cd, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &1533250411 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1533250410}
 --- !u!1001 &1540529117
 Prefab:
   m_ObjectHideFlags: 0
@@ -1487,18 +1456,6 @@ Prefab:
     - target: {fileID: 4097201136099070, guid: 4e6df588bc550664baef3aa8d78ccd58, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097201136099070, guid: 4e6df588bc550664baef3aa8d78ccd58, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.8115569
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097201136099070, guid: 4e6df588bc550664baef3aa8d78ccd58, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.81155676
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097201136099070, guid: 4e6df588bc550664baef3aa8d78ccd58, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.81155676
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e6df588bc550664baef3aa8d78ccd58, type: 2}
@@ -1681,7 +1638,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &2047862221 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: 436b3195c179f4d4cb9c18d7885021cd, type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 2047862220}
 --- !u!1 &2099651468
 GameObject:

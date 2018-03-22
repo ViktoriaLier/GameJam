@@ -277,6 +277,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4097201136099070}
   - component: {fileID: 95542300480827136}
+  - component: {fileID: 136098424721156280}
+  - component: {fileID: 136326891791326232}
   m_Layer: 0
   m_Name: Old Man Idle (1)
   m_TagString: Untagged
@@ -1333,8 +1335,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1240055577555678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7245208, y: -0.65, z: -0.60281813}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 372.73, y: 0, z: 369.804}
+  m_LocalScale: {x: 0.8115569, y: 0.81155676, z: 0.81155676}
   m_Children:
   - {fileID: 4904552948865724}
   - {fileID: 4084157845778114}
@@ -2272,6 +2274,32 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!136 &136098424721156280
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240055577555678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.525203
+  m_Height: 1.8292893
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.72317827, z: 0.025203032}
+--- !u!136 &136326891791326232
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240055577555678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25461155
+  m_Height: 1.854272
+  m_Direction: 1
+  m_Center: {x: 0.05673722, y: 0.69740325, z: 0.02853783}
 --- !u!137 &137104797597581390
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
