@@ -359,6 +359,61 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.043907866, y: 0.08254401, z: 0.011340889}
   m_Center: {x: 0.023538677, y: 0.040180054, z: 0.12693244}
+--- !u!114 &196539628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 196539626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989263e60d17c5948afabddd93e32c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talk: 0
+  convinced: 0
+  interactiveObject: 1
+  correctOrder: 0
+  npcName: 
+  textBackstory: 
+  textInitiate: 
+  textObject: I'm on my way to the city. To find people that help me demonstrating
+    against the nuclear power plant in my town.
+  textChoseA: 
+  textChoseB: 
+  textConvinced: 
+  textChoseAA: 
+  textChoseBB: 
+  textChoseBA: 
+  textChoseAB: 
+  textA: 
+  textB: 
+  textAA: 
+  textAB: 
+  textBA: 
+  textBB: 
+  textButtonA: 
+  textButtonB: 
+  textButtonAA: 
+  textButtonBB: 
+  textButtonAB: 
+  textButtonBA: 
+  correctAA: 0
+  correctAB: 0
+  correctBA: 0
+  correctBB: 0
+--- !u!65 &196539629
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 196539626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.043907907, y: 0.08254401, z: 0.02070091}
+  m_Center: {x: 0.023538698, y: 0.040180054, z: 0.122252434}
 --- !u!1 &209145715
 GameObject:
   m_ObjectHideFlags: 0
